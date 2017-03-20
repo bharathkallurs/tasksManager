@@ -193,8 +193,9 @@ class TaskTable(Db):
 				print task_id
 				if task_end_date < current_date:
 					return (403, "End date should be greater than create date")
-				result = table.update({"task_id": task_id},
-				                      {"$set": update_json}, upsert=False)
+				result = table.update(spec={"task_id": task_id},
+				                      document={"$set": update_json},
+				                      upsert=False)
 
 				print "printing result"
 				print result

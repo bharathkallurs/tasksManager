@@ -131,7 +131,7 @@ def task_update(task_id=None):
     task_owner = str(task_details['task_owner'])
     print task_owner
 
-    status, msg = tt.update_task(task_id=task_id,
+    status, msg = tt.update_task(task_id=int(task_id),
                                  task_name=task_name,
                                  task_end_date=task_end_date,
                                  task_description=task_description,
