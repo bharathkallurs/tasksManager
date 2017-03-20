@@ -1,7 +1,6 @@
 import sys
 import counter
 import logging as log
-import json
 
 from pymongo import ASCENDING
 from datetime import datetime
@@ -32,9 +31,8 @@ class TaskTable(Db):
 		:return: Success if task entered, else appropriate error
 		"""
 		task_id = counter.get_next_counter(TABLE_NAME)
-		print "Task id = ", task_id
 		current_date = datetime.now()
-		# log.info("Setting task_id = %s", task_id)
+		log.info("Setting task_id = %s", task_id)
 		try:
 			with TaskTable() as table:
 				insert_json = {"task_name": task_name,
@@ -46,11 +44,11 @@ class TaskTable(Db):
 				if task_end_date < current_date:
 					return (403, "End date should be greated than create date")
 				table.insert(insert_json)
-				# log.info("Inserted task successfully to DB")
-				# log.info("Task = %s", insert_json)
+				log.info("Inserted task successfully to DB")
+				log.info("Task = %s", insert_json)
 				return (200, "Task Entered Successfully")
 		except Exception as e:
-			log.ERROR(sys.exc_info()[0], e)
+			log.error(sys.exc_info()[0], e)
 			return (-101, "Task entry failed")
 
 	@staticmethod
@@ -59,16 +57,14 @@ class TaskTable(Db):
 		Lists all the tasks in the DB currently
 		:return: JSON of all tasks
 		"""
-		print "inside list all tasks"
 		out = []
 		try:
 			with TaskTable() as table:
 				table.ensure_index([("task_id", ASCENDING)], unique=True)
 				results = table.find({}, {"_id": False}).sort("task_id",
 				                                             ASCENDING)
-				print "printing results ", results
 				if not results:
-					print("No tasks to list")
+					log.info("No tasks to list")
 					return (-102, None)
 				for result in results:
 					cr_date = result['task_create_date']
@@ -76,12 +72,10 @@ class TaskTable(Db):
 					en_date = result['task_end_date']
 					result['task_end_date'] = en_date.strftime("%Y-%m-%d")
 					out.append(result)
-				print "printing out ", out
-				# log.info("tasks list = %s", results)
+				log.info("tasks list = %s", out)
 				return (200, out)
 		except Exception as e:
-			print "tasks list error"
-			print(sys.exc_info()[0], e)
+			log.error(sys.exc_info()[0], e)
 			return (-103, "Task list failed")
 
 	@staticmethod
@@ -95,7 +89,6 @@ class TaskTable(Db):
 		str_date = qdate.strftime("%Y-%m-%d")
 		after_str = "after"
 		out = []
-		print "printing qdate"
 		try:
 			with TaskTable() as table:
 				table.ensure_index([("task_id", ASCENDING)], unique=True)
@@ -106,7 +99,7 @@ class TaskTable(Db):
 					after_str = "before"
 				results = table.find(date_query, {"_id": False})
 				if not results:
-					print("No tasks to list %s this date", after_str)
+					log.warning("No tasks to list %s this date", after_str)
 					return (-102, None)
 				for r in results:
 					cr_date = r['task_create_date']
@@ -117,30 +110,28 @@ class TaskTable(Db):
 				if out == []:
 					return (404, "No task %s end date %s" % (after_str,
 					                                        str_date))
+				log.info("tasks list %s %s = %s", after_str, str_date, out)
 				return (200, out)
-				# log.info("tasks list %s %s = %s", after_str, str_date, results)
 		except Exception as e:
-			print(sys.exc_info()[0], e)
+			log.error(sys.exc_info()[0], e)
 			return (-103, "Tasks listing failed")
 
 	@staticmethod
-	def get_task(name):
+	def get_task(task_id):
 		"""
 		Get a particular task based on name
-		:param name: Name of the task
+		:param task_id: task id of the task
 		:return: JSON for the particular task
 		"""
 		out = []
 		try:
 			with TaskTable() as table:
-				result = table.find({"task_name": {"$eq": name}}, {"_id":
+				result = table.find({"task_id": {"$eq": task_id}}, {"_id":
 					                                                   False})
-				print "printing result"
-				print result
 				if not result:
-					# log.ERROR("No task with %s name", name)
-					return (404, "No task with %s name" % name)
-				# log.info("Task is = %s", result)
+					log.error("404 - No task with %d task id", task_id)
+					return (404, "No task with %d task_id" % task_id)
+				log.info("Task is = %s", result)
 				for r in result:
 					cr_date = r['task_create_date']
 					r['task_create_date'] = cr_date.strftime("%Y-%m-%d")
@@ -148,10 +139,11 @@ class TaskTable(Db):
 					r['task_end_date'] = en_date.strftime("%Y-%m-%d")
 					out.append(r)
 				if out == []:
-					return (404, "No task with %s name" % name)
+					log.error("404 - No task with %d task_id", task_id)
+					return (404, "No task with task_id %d" % task_id)
 				return (200, out)
 		except Exception as e:
-			print (sys.exc_info()[0], e)
+			log.error(sys.exc_info()[0], e)
 			return (-103, "Task listing failed")
 
 	@staticmethod
@@ -166,7 +158,6 @@ class TaskTable(Db):
 		:param task_owner: owner of the task
 		:return: Success if task entered, else appropriate error
 		"""
-		print "reached update task db"
 		current_date = datetime.now()
 		update_json = dict()
 		input_json = {
@@ -175,56 +166,48 @@ class TaskTable(Db):
 					    "task_description": task_description,
 					    "task_owner": task_owner
 					}
-		print "printing input json"
-		print input_json
 		try:
 			with TaskTable() as table:
-				# update_json["$set"] = dict()
 				if not task_id:
 					return (403, "Task id is a mandatory parameter")
 
 				for k, v in input_json.iteritems():
 					if v:
 						update_json[k] = v
-
-				print "printing update_json"
-				print update_json
-				print "task id"
-				print task_id
+				log.info("Updating following records %s", update_json)
 				if task_end_date < current_date:
 					return (403, "End date should be greater than create date")
 				result = table.update(spec={"task_id": task_id},
 				                      document={"$set": update_json},
 				                      upsert=False)
 
-				print "printing result"
-				print result
-				if result['nModified'] == 1:
+				if result['nModified'] == 1 and result['ok'] == 1:
 					out = "Task updated successfully with all changes"
+					log.info(out)
 					return (200, out)
+				log.error("-102 - Task update failed %s", result)
 				return (-102, "Task update failed.")
 		except Exception as e:
-			print (sys.exc_info()[0], e)
+			log.error(sys.exc_info()[0], e)
 			return (-103, "Task update failed")
 
 	@staticmethod
-	def delete_task(name):
+	def delete_task(task_id):
 		"""
 		Delete a particular task from the table
-		:param task_name: Task name to be deleted
+		:param task_id: Task id to be deleted
 		:return: Number of documents removed
 		"""
 		try:
 			with TaskTable() as table:
-				result = table.remove({"task_name": {"$eq": name}})
-				print result
+				result = table.remove({"task_id": {"$eq": task_id}})
 				if result["ok"] != 1 and result['n'] == 0:
-					# log.ERROR("Failed to delete task %s", name)
+					log.error("Failed to delete task %s", task_id)
 					return (-104, "Failed to delete task")
-				# log.info("Task %s deleted", name)
-				return (200, "Task %s deleted" % name)
+				log.info("Task with id %d deleted", task_id)
+				return (200, "Task with id %d deleted" % task_id)
 		except Exception as e:
-			# log.ERROR(sys.exc_info()[0], e)
+			log.error(sys.exc_info()[0], e)
 			print sys.exc_info()[0], e
 			return (-104, "Task deleteion failed")
 
