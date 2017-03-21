@@ -61,8 +61,8 @@ def task_list():
 @app.route('/task/list_before/<date>', methods=['GET'])
 def task_list_before_date(date):
     """
-    Get a list of all tasks before a given date
-    :return: List of all tasks before date
+    Get a list of all tasks ending before a given date
+    :return: JSON of all tasks ending before date
     """
     filter_date, msg = validate_date(date)
     if not filter_date:
@@ -74,8 +74,8 @@ def task_list_before_date(date):
 @app.route('/task/list_after/<date>', methods=['GET'])
 def task_list_after_date(date):
     """
-    Get a list of all tasks after a given date
-    :return: List of all tasks after date
+    Get a list of all tasks created after a given date
+    :return: List of all tasks created after date
     """
     filter_date, msg = validate_date(date)
     if not filter_date:

@@ -81,22 +81,23 @@ class TaskTable(Db):
 	@staticmethod
 	def list_based_on_date(qdate, after=False):
 		"""
-		List tasks before and after a particular end date based on after flag
+		List tasks with end date before a given date.
+		List tasks created after a given date.
 		:param qdate: a date to query before/after for tasks
 		:param after: bool set to False.
 		:return:
 		"""
 		str_date = qdate.strftime("%Y-%m-%d")
-		after_str = "after"
+		after_str = "created after"
 		out = []
 		try:
 			with TaskTable() as table:
 				table.ensure_index([("task_id", ASCENDING)], unique=True)
 				if after:
-					date_query = {"task_end_date": {"$gt": qdate}}
+					date_query = {"task_create_date": {"$gt": qdate}}
 				else:
 					date_query = {"task_end_date": {"$lt": qdate}}
-					after_str = "before"
+					after_str = "ending before"
 				results = table.find(date_query, {"_id": False})
 				if not results:
 					log.warning("No tasks to list %s this date", after_str)
@@ -108,7 +109,7 @@ class TaskTable(Db):
 					r['task_end_date'] = en_date.strftime("%Y-%m-%d")
 					out.append(r)
 				if out == []:
-					return (404, "No task %s end date %s" % (after_str,
+					return (404, "No task %s date %s" % (after_str,
 					                                        str_date))
 				log.info("tasks list %s %s = %s", after_str, str_date, out)
 				return (200, out)
