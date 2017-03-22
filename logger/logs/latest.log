@@ -1,8 +1,0 @@
-INFO:2017-03-21 20:28:09,893:loggen.py:Starting Task App Logger at 20170321_202809
-INFO:2017-03-21 20:28:09,894:tasks_indiez.py:Starting tasks app
-INFO:2017-03-21 20:28:09,896:_internal.py: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-INFO:2017-03-21 20:28:33,857:task_db.py:tasks list created after 2017-03-20 = [{u'task_end_date': '2017-04-08', u'task_id': 8, u'task_create_date': '2017-03-20', u'task_description': u'Ranjini Gunjini', u'task_owner': u'ranjini', u'task_name': u'R1_updated'}]
-INFO:2017-03-21 20:28:33,858:_internal.py:127.0.0.1 - - [21/Mar/2017 20:28:33] "GET /task/list_after/2017-03-20 HTTP/1.1" 200 -
-INFO:2017-03-21 20:29:23,323:_internal.py:127.0.0.1 - - [21/Mar/2017 20:29:23] "GET /task/list_before/2017-03-20 HTTP/1.1" 200 -
-INFO:2017-03-21 20:29:34,891:task_db.py:tasks list ending before 2017-05-01 = [{u'task_end_date': '2017-04-21', u'task_id': 6, u'task_create_date': '2017-03-19', u'task_description': u' 2nd update made to task', u'task_owner': u'bkallur', u'task_name': u'task_name_new'}, {u'task_end_date': '2017-04-08', u'task_id': 8, u'task_create_date': '2017-03-20', u'task_description': u'Ranjini Gunjini', u'task_owner': u'ranjini', u'task_name': u'R1_updated'}]
-INFO:2017-03-21 20:29:34,892:_internal.py:127.0.0.1 - - [21/Mar/2017 20:29:34] "GET /task/list_before/2017-05-01 HTTP/1.1" 200 -

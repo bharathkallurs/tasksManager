@@ -1,7 +1,7 @@
 import logging as log
 
 from db.task_db import TaskTable as tt
-from flask import Flask, request
+from flask import Flask, request, render_template
 from logger.loggen import set_log_params, move_latest_log_to_persistent_file
 from utils.utils import validate_date, get_response_json
 
@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     # Change it to a relevant home page
-    return 'Hello World!'
+    return render_template("index.html")
 
 @app.route('/task/add', methods=['POST'])
 def task_add():
@@ -127,6 +127,6 @@ if __name__ == '__main__':
     # To change enter level = # log.DEBUG or log.WARNING etc.
     set_log_params(level=log.INFO)
     log.info("Starting tasks app")
-    app.run()
+    app.run(port=5002)
     # move latest.log to tasker_<timebased>.log
     move_latest_log_to_persistent_file()
