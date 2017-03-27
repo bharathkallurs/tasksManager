@@ -1,2 +1,129 @@
 {% include 'header.html' %}
+<div class="container">
+    <header>
+        <h2 class="header">FAQs</h2>
+    </header>
+    <hr>
+</div>
+<div class="container">
+    <div class="col-md-offset-2 col-md-9">
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+            <div class="card-header" role="tab" id="q1">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#a1"
+                   aria-expanded="true" aria-controls="a1">
+                  What is Task Management Application?
+                </a>
+              </h5>
+            </div>
+
+            <div id="a1" class="collapse show" role="tabpanel"
+                 aria-labelledby="q1">
+              <div class="card-block">
+                  Task Management Application (TMA) is an application to
+                  perform CRUD operations on task. It is a simple tool which
+                  can also let you list and filter your tasks list.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+            <div class="card-header" role="tab" id="q2">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#a2"
+                   aria-expanded="true" aria-controls="a2">
+                  What is the backend developed on?
+                </a>
+              </h5>
+            </div>
+
+            <div id="a2" class="collapse" role="tabpanel"
+                 aria-labelledby="q2">
+              <div class="card-block">
+                  TMA backend work is written in python Flask.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+            <div class="card-header" role="tab" id="q3">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#a3"
+                   aria-expanded="true" aria-controls="a3">
+                  What is the frontend developed on?
+                </a>
+              </h5>
+            </div>
+
+            <div id="a3" class="collapse" role="tabpanel"
+                 aria-labelledby="q3">
+              <div class="card-block">
+                  TMA frontend is written using jinja2 for templating,
+                  angular.js for frontend MVC and twitter bootstrap for styling.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+            <div class="card-header" role="tab" id="q4">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#a4"
+                   aria-expanded="true" aria-controls="a4">
+                    What all APIs are allowed at the backend?
+                </a>
+              </h5>
+            </div>
+
+            <div id="a4" class="collapse" role="tabpanel"
+                 aria-labelledby="q4">
+              <div class="card-block">
+                  API implementation is REST based. Following are allowed:
+                  <ul>
+                     <li>Add task : /task/add</li>
+                      <li>Delete task: /task/delete/{task-id}</li>
+                      <li>Update task: /task/update/{task-id}</li>
+                      <li>Get task: /task/get/{task-id}</li>
+                      <li>List all tasks: /task/list</li>
+                      <li>list all tasks before given date:
+                          /task/list_before/{YYYY-MM-DD}</li>
+                      <li>list all tasks created after a date:
+                          /task/list_after/{YYYY-MM-DD}</li>
+                      <li>list all tasks created within a date range:
+                          /task/list_bw_cr_dt/{YYYY-MM-DD}/{YYYY-MM-DD}</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+            <div class="card-header" role="tab" id="q5">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#a5"
+                   aria-expanded="true" aria-controls="a5">
+                    What operations are supported in frontend?
+                </a>
+              </h5>
+            </div>
+
+            <div id="a5" class="collapse" role="tabpanel"
+                 aria-labelledby="q5">
+              <div class="card-block">
+                  <ul>
+                      <li>Task Create</li>
+                      <li>Task Delete at ach task level</li>
+                      <li>Task Update at each task level</li>
+                      <li>Task List all</li>
+                      <li>Task list created within a date range</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
 {% include 'footer.html' %}
