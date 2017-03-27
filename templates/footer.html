@@ -1,2 +1,18 @@
 <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
-<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.js')}}"></script>
+<script src="{{ url_for('static', filename='js/angular.js') }}"></script>
+<script src="{{ url_for('static', filename='js/task.js') }}"></script>
+<script src="{{ url_for('static', filename='js/angular-datepicker.js')
+        }}"></script>
+
+<script>
+    $(function(){
+        if (window.location.pathname == '/doc'){
+            $("#task-creation").hide();
+        } else {
+            $("#task-creation").show();
+        }
+    });
+</script>
+</body>
+</html>

@@ -9,9 +9,14 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
+def home():
     # Change it to a relevant home page
     return render_template("index.html")
+
+@app.route('/doc')
+def documentation():
+    # FAQ page for the usage of the app
+    return render_template("docs.html")
 
 @app.route('/task/add', methods=['POST'])
 def task_add():
@@ -19,14 +24,14 @@ def task_add():
     Adding tasks to
     :return: Success message after addition of task
     """
-    task_details = request.get_json()
+    task_details = request.json['task']
     task_name = str(task_details['task_name'])
-    end_date = str(task_details['end_date'])
+    end_date = str(task_details['task_end_date'])
     task_end_date, msg = validate_date(end_date)
     if not task_end_date:
         return get_response_json(403, msg)
 
-    task_end_date = task_end_date.replace(hour=11, minute=59, second=59)
+    task_end_date = task_end_date.replace(hour=23, minute=59, second=59)
     task_description = str(task_details['task_description'])
     task_owner = str(task_details['task_owner'])
 
@@ -67,7 +72,7 @@ def task_list_before_date(date):
     filter_date, msg = validate_date(date)
     if not filter_date:
         return get_response_json(403, "date not in YYYY-MM-DD format")
-    filter_date = filter_date.replace(hour=11, minute=59, second=59)
+    filter_date = filter_date.replace(hour=23, minute=59, second=59)
     status, result = tt.list_based_on_date(qdate=filter_date)
     return get_response_json(status, result)
 
@@ -80,8 +85,29 @@ def task_list_after_date(date):
     filter_date, msg = validate_date(date)
     if not filter_date:
         return get_response_json(403, "date not in YYYY-MM-DD format")
-    filter_date = filter_date.replace(hour=11, minute=59, second=59)
+    filter_date = filter_date.replace(hour=23, minute=59, second=59)
     status, result = tt.list_based_on_date(qdate=filter_date, after=True)
+    return get_response_json(status, result)
+
+@app.route('/task/list_bw_cr_dt/<st_date>/<en_date>', methods=['GET'])
+def task_list_between_create_date(st_date, en_date):
+    """
+    Get a list of all tasks created between a date range
+    :param st_date: start date
+    :param en_date: end date
+    :return: List of all tasks created between range of the date
+    """
+    filter_st_date, msg = validate_date(st_date)
+    if not filter_st_date:
+        return get_response_json(403, "start date not in YYYY-MM-DD format")
+    filter_st_date = filter_st_date.replace(hour=00, minute=01, second=01)
+    filter_en_date, msg = validate_date(en_date)
+    if not filter_en_date:
+        return get_response_json(403, "end date not in YYYY-MM-DD format")
+    filter_en_date = filter_en_date.replace(hour=23, minute=59, second=59)
+    status, result = tt.list_based_on_date(qdate=filter_st_date,
+                                           pdate=filter_en_date,
+                                           after=True)
     return get_response_json(status, result)
 
 @app.route('/task/delete/<task_id>', methods=['GET'])
@@ -103,14 +129,17 @@ def task_update(task_id=None):
     :param task_id: Id of the task
     :return: Message of completion on task update
     """
-    task_details = request.get_json()
+    if not task_id:
+        return get_response_json(403, "task id necessary. "
+                                      "/task/update/<task-id>")
+    task_details = request.json['task']
     task_name = str(task_details['task_name'])
-    end_date = str(task_details['end_date'])
+    end_date = str(task_details['task_end_date'])
     task_end_date, msg = validate_date(end_date)
     if not task_end_date:
         return get_response_json(403, msg)
 
-    task_end_date = task_end_date.replace(hour=11, minute=59, second=59)
+    task_end_date = task_end_date.replace(hour=23, minute=59, second=59)
     task_description = str(task_details['task_description'])
     task_owner = str(task_details['task_owner'])
 

@@ -1,0 +1,153 @@
+<!-- Modal for Create Task -->
+<div class="modal fade" id="createTask" tabindex="-1" role="dialog"
+     aria-labelledby="createTaskModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createTaskModal">Create Task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="taskname">Task Name</label>
+                <input type="text" class="form-control"
+                       placeholder="Task Name" ng-model="task.task_name" required>
+            </div>
+            <div class="form-group">
+                <label for="taskdesc">Task Description</label>
+                <input type="text" class="form-control"
+                       placeholder="Description"
+                       ng-model="task.task_description" required>
+            </div>
+            <div class="form-group">
+                <label for="taskowner">Created By</label>
+                <input type="text" class="form-control" placeholder="Task Owner"
+                ng-model="task.task_owner" required>
+            </div>
+            <div class="form-group">
+                <label for="taskenddate">Task End Date</label>
+                <datepicker date-format="yyyy-MM-dd">
+                <input type="text" class="form-control"
+                       placeholder="YYYY-MM-DD" ng-model="task.task_end_date"
+                       required>
+                </datepicker>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="addTask()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for update Task-->
+<div class="modal fade" id="updateTask" tabindex="-1" role="dialog"
+     aria-labelledby="updateTaskModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateTaskModal">Update Task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="taskname">Task Name</label>
+                <input type="text" class="form-control"
+                       ng-model="task_detail.task_name">
+            </div>
+            <div class="form-group">
+                <label for="taskdesc">Task Description</label>
+                <input type="text" class="form-control"
+                       ng-model="task_detail
+                       .task_description">
+            </div>
+            <div class="form-group">
+                <label for="taskowner">Created By</label>
+                <input type="text" class="form-control"
+                ng-model="task_detail.task_owner">
+            </div>
+            <div class="form-group">
+                <label for="taskenddate">Task End Date</label>
+                <datepicker date-format="yyyy-MM-dd">
+                    <input type="text" class="form-control"
+                           placeholder="YYYY-MM-DD"
+                           ng-model="task_detail.task_end_date">
+                </datepicker>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="updateTask()">Update</button>
+      </div>
+    </div>
+    </div>
+</div>
+
+<!-- Modal for delete Task-->
+<div class="modal fade" id="deleteTask" tabindex="-1" role="dialog"
+     aria-labelledby="updateTaskModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteTaskModal">Confirm Delete Task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          Are you sure to delete this task?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="deleteTask()">Delete</button>
+      </div>
+    </div>
+    </div>
+</div>
+
+<!-- Modal for Date Range Search -->
+<div class="modal fade" id="listRange" tabindex="-1" role="dialog"
+     aria-labelledby="DRSModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="DRSModal">Tasks created within dates</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="createdafter">Created After</label>
+                <datepicker date-format="yyyy-MM-dd">
+                    <input type="text" id="listStDt" class="form-control"
+                       placeholder="YYYY-MM-DD" required>
+                </datepicker>
+            </div>
+            <div class="form-group">
+                <label for="createdbefore">Created Before</label>
+                <datepicker date-format="yyyy-MM-dd">
+                    <input type="text" id="listEnDt" class="form-control"
+                       placeholder="YYYY-MM-DD" required>
+                </datepicker>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"
+                ng-click="listTaskDateRange()">Search</button>
+      </div>
+    </div>
+    </div>
+</div>

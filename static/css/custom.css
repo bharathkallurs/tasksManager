@@ -1,0 +1,20 @@
+nav{
+    display:inline;
+    float:right;
+}
+
+nav ul{
+    list-style:none;
+}
+
+nav ul li{
+    display:inline-block;
+}
+
+.demo {
+    text-align: left;
+}
+
+.input-group-btn:last-child>.btn {
+    margin-top: 25px;
+  }

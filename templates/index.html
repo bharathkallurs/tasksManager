@@ -1,59 +1,60 @@
 {% include 'header.html' %}
-<body>
- <header class="intro" id="ip-intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">IdeasPlatter</h1>
-                        <p class="intro-text">Where ideas connect people....</p>
-                        </br>
-                        <!-- removed the form -->
-                    </div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Task Management App</h1>
+    <p class="lead">This is a simple task management app for CRUD operations
+        on tasks. The tasks can also be listed. Filters like end-date before
+        a given date, list created after a given date can be applied as well.
+    </p>
+  </div>
+</div>
+<div class="container">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <div class="collapse navbar-collapse" id="navPages">
+      <i class="fa fa-bars" ng-click="listTasks()" data-toggle="tooltip"
+         data-placement="top" title="List all tasks" onmouseover=""
+         style="cursor: pointer;"></i>
+  </div>
+  <div class="navbar-right" id="task-list-date-range">
+      <button type="button" class="btn btn-primary btn-default" data-toggle="modal"
+              data-target="#listRange">Date Range Search</button>
+  </div>
+</nav>
+</div>
+<!-- Card display -->
+<div class="container">
+    <div class="row">
+        <div ng-repeat="task in tasks" class="col-sm-3">
+            <div class="card">
+                <div class="card-header">
+                    <h3 id="#tName" class="card-title">{a task.task_name a}</h3>
+                </div>
+                <div class="card-block">
+                    <p id="tDesc" class="card-text">{a task.task_description
+                        a}</p>
+                    <p id="tID" class="card-text">{a task.task_id a}</p>
+                    <p id="tCD" class="card-text">{a task.task_create_date
+                        a}</p>
+                    <p id="tED" class="card-text">{a task.task_end_date a}</p>
+                    <p id="tOwn" class="card-text">{a task.task_owner a}</p>
+                </div>
+                <div class="card-footer">
+                    <i class="fa fa-pencil" ng-click="getTask(task.task_id)"
+                       data-toggle="modal"
+                       data-target="#updateTask"
+                       data-placement="top" title="Edit Task"
+                        onmouseover="" style="cursor: pointer;"></i>
+                    &nbsp;&nbsp;
+                    <i class="fa fa-trash-o"
+                       ng-click="getTask(task.task_id)" data-toggle="modal"
+                       data-target="#deleteTask"
+                       data-placement="top" title="Delete Task"
+                       onmouseover="" style="cursor: pointer;"></i>
                 </div>
             </div>
         </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>About IdeasPlatter</h2>
-                <p>IdeasPlatter came as a concept to help exchange and work on startup ideas together. "Together we progress" is the driving factor for IdeasPlatter.</p>
-                <p>Ideas are not unique, the way of execution is. When right people come together to work on a common idea they had, a better product/service can be built in lesser time.</p>
-                <p>Other than already daunting problems in startup scene, another burden people end up battling is competition. IdeasPlatter, will serve to connect people with similar ideas.</p>
-                <p>An idea can be enhanced and moulded with people of similar interests contributing towards achieving a single goal, than getting stuck competing.</p>
-            </div>
-        </div>
-        <a href="#contact" class="btn btn-circle page-scroll">
-            <i class="fa fa-angle-double-down animated"></i>
-        </a>
-    </section>
-     </br></br></br></br>
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-       <div class="row">
-  <div class="col-sm-3">
-    <div class="card">
-      <div class="card-block">
-        <h3 class="card-title">Special title treatment</h3>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
     </div>
-  </div>
-  <div class="col-sm-3">
-    <div class="card">
-      <div class="card-block">
-        <h3 class="card-title">Special title treatment</h3>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
 </div>
-    </section>
+{% include 'modals.html' %}
 {% include 'footer.html' %}
-</body>
-</html>

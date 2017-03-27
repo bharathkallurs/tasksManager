@@ -79,11 +79,12 @@ class TaskTable(Db):
 			return (-103, "Task list failed")
 
 	@staticmethod
-	def list_based_on_date(qdate, after=False):
+	def list_based_on_date(qdate, pdate=None, after=False):
 		"""
 		List tasks with end date before a given date.
 		List tasks created after a given date.
 		:param qdate: a date to query before/after for tasks
+		:param pdate: a date to query for created tasks before a date
 		:param after: bool set to False.
 		:return:
 		"""
@@ -95,6 +96,9 @@ class TaskTable(Db):
 				table.ensure_index([("task_id", ASCENDING)], unique=True)
 				if after:
 					date_query = {"task_create_date": {"$gt": qdate}}
+					if pdate:
+						date_query = {"task_create_date": {"$gt": qdate,
+														   "$lt": pdate}}
 				else:
 					date_query = {"task_end_date": {"$lt": qdate}}
 					after_str = "ending before"
