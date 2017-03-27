@@ -30,14 +30,31 @@
                 <div class="card-header">
                     <h3 id="#tName" class="card-title">{a task.task_name a}</h3>
                 </div>
-                <div class="card-block">
-                    <p id="tDesc" class="card-text">{a task.task_description
-                        a}</p>
-                    <p id="tID" class="card-text">{a task.task_id a}</p>
-                    <p id="tCD" class="card-text">{a task.task_create_date
-                        a}</p>
-                    <p id="tED" class="card-text">{a task.task_end_date a}</p>
-                    <p id="tOwn" class="card-text">{a task.task_owner a}</p>
+                <div class="card-block table-responsive">
+                    <table class="table-bordered">
+                        <tr>
+                            <td>Description </td>
+                            <td><p id="tDesc" class="card-text"> {a task
+                                .task_description
+                        a}</p></td>
+                        </tr>
+                        <tr>
+                            <td>Created on </td>
+                            <td><p id="tCD" class="card-text"> {a task
+                                .task_create_date
+                        a}</p></td>
+                        </tr>
+                        <tr>
+                            <td>Ending on </td>
+                            <td><p id="tED" class="card-text"> {a task
+                                .task_end_date a}</p></td>
+                        </tr>
+                        <tr>
+                            <td>Owner </td>
+                            <td><p id="tOwn" class="card-text"> {a task
+                                .task_owner a}</p></td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="card-footer">
                     <i class="fa fa-pencil" ng-click="getTask(task.task_id)"
