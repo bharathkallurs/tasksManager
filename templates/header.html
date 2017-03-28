@@ -11,9 +11,15 @@
           rel="stylesheet">
     <link href="{{ url_for('static', filename='css/angular-datepicker.css')
             }}" rel="stylesheet">
-
+    <link href="{{ url_for('static', filename='css/mdb.css') }}"
+          rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/ngToast.scss') }}"
+          rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/ngtoast-animations.scss') }}"
+          rel="stylesheet">
 </head>
 <body ng-controller="taskController">
+<toast></toast>
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
   <div class="collapse navbar-collapse" id="navPages">
     <ul class="navbar-nav">

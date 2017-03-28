@@ -1,20 +1,3 @@
-nav{
-    display:inline;
-    float:right;
+body {
+    background-color: #e1f5fe;
 }
-
-nav ul{
-    list-style:none;
-}
-
-nav ul li{
-    display:inline-block;
-}
-
-.demo {
-    text-align: left;
-}
-
-.input-group-btn:last-child>.btn {
-    margin-top: 25px;
-  }

@@ -1,13 +1,22 @@
-var tasker = angular.module('taskApp', ['720kb.datepicker']);
+var tasker = angular.module('taskApp', ['720kb.datepicker', 'ngToast']);
 
 tasker.config(['$interpolateProvider', function($interpolateProvider) {
   $interpolateProvider.startSymbol('{a');
   $interpolateProvider.endSymbol('a}');
 }]);
 
-tasker.controller("taskController", function($scope, $http){
+tasker.controller("taskController", function($scope, $http, ngToast){
     $scope.task = {};
     $scope.task_detail = {};
+
+    var ngToastmsg = function(ngToast, contentType, msg){
+        ngToast.create({
+            className: contentType,
+            content: '<a href="#" class="">'.concat(msg, '</a>'),
+            dismissButton: true,
+            timeout: 3000
+        });
+    };
 
     $scope.addTask = function(){
         console.log($scope.task);
@@ -23,22 +32,22 @@ tasker.controller("taskController", function($scope, $http){
 
         createCall.then(function(response) {
                         $scope.task = {};
-                        alert(response.data.result);
+                        ngToastmsg(ngToast, 'success', response.data.result);
                         $scope.listTasks();
                     }, function(error) {
-                        alert(error.result);
-                        console.log(error);
+                        ngToastmsg(ngToast, 'danger', error.data);
+                        console.log(error.data);
                     });
                 };
 
     $scope.listTasks = function() {
         $http({
             method: 'GET',
-            url: '/task/list',
-
+            url: '/task/list'
         }).then(function(response) {
                         $scope.tasks = response.data.result;
                     }, function(error) {
+                        ngToastmsg(ngToast, 'danger', error.data);
                         console.log(error);
                     });
                 };
@@ -56,6 +65,7 @@ tasker.controller("taskController", function($scope, $http){
             $scope.tasks = response.data.result;
             $("#listRange").modal('hide');
         }, function(error) {
+            ngToastmsg(ngToast, 'danger', error.data);
             console.log(error);
         });
     };
@@ -73,6 +83,7 @@ tasker.controller("taskController", function($scope, $http){
                         $scope.task_detail = response.data.result[0];
                         console.log('task_detail', $scope.task_detail);
                     }, function(error) {
+                        ngToastmsg(ngToast, 'danger', error.data);
                         console.log(error);
                     });
                 };
@@ -91,8 +102,9 @@ tasker.controller("taskController", function($scope, $http){
                     updateCall.then(function(response) {
 						console.log(response.data);
 						$scope.listTasks();
-						alert(response.data.result);
+						ngToastmsg(ngToast, 'success', response.data.result);
 					}, function(error) {
+                        ngToastmsg(ngToast, 'danger', error.data);
 						console.log(error);
 					});
 				};
@@ -107,8 +119,9 @@ tasker.controller("taskController", function($scope, $http){
 
                     deleteCall.then(function(response){
                         $scope.listTasks();
-                        alert(response.data.result);
+                        ngToastmsg(ngToast, 'success', response.data.result);
                     }, function(error){
+                        ngToastmsg(ngToast, 'danger', error.data);
                         console.log(error);
                     });
                 };
