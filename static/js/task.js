@@ -9,12 +9,16 @@ tasker.controller("taskController", function($scope, $http, ngToast){
     $scope.task = {};
     $scope.task_detail = {};
 
+    // set today's date to minimum limit
+    $scope.minDate = new Date().toString();
+    console.log($scope.minDate);
+
     var ngToastmsg = function(ngToast, contentType, msg){
         ngToast.create({
             className: contentType,
             content: '<a href="#" class="">'.concat(msg, '</a>'),
             dismissButton: true,
-            timeout: 3000
+            timeout: 4800
         });
     };
 
@@ -64,14 +68,12 @@ tasker.controller("taskController", function($scope, $http, ngToast){
         }).then(function(response) {
             $scope.tasks = response.data.result;
             $("#listRange").modal('hide');
+            ngToastmsg(ngToast, 'info', response.data.result);
         }, function(error) {
             ngToastmsg(ngToast, 'danger', error.data);
             console.log(error);
         });
     };
-
-    // Call this on page load to list all the tasks
-    $scope.listTasks();
 
     $scope.getTask = function(id){
         $scope.id = id;
@@ -125,4 +127,7 @@ tasker.controller("taskController", function($scope, $http, ngToast){
                         console.log(error);
                     });
                 };
+
+    // Call this on page load to list all the tasks
+    $scope.listTasks();
 });

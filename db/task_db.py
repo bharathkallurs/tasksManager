@@ -101,6 +101,7 @@ class TaskTable(Db):
 					if pdate:
 						date_query = {"task_create_date": {"$gt": qdate,
 														   "$lt": pdate}}
+						after_str = "ending before %s and started after" % qdate
 				else:
 					date_query = {"task_end_date": {"$lt": qdate}}
 					after_str = "ending before"

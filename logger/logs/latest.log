@@ -1,27 +1,14 @@
-INFO:2017-03-30 01:27:49,243:loggen.py:Starting Task App Logger at 20170330_012749
-INFO:2017-03-30 01:27:49,243:tasks_indiez.py:Starting tasks app
-INFO:2017-03-30 01:27:49,284:_internal.py: * Running on http://127.0.0.1:5000/
-INFO:2017-03-30 01:28:19,981:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:19] "GET / HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,005:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/bootstrap.css HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,062:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/font-awesome.min.css HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,065:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/angular-datepicker.css HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,066:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/mdb.css HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,070:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/ngToast.scss HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,072:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/ngtoast-animations.scss HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,074:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/custom.css HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,090:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/jquery.js HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,107:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/bootstrap.js HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,130:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/angular.js HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,150:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/mdb.js HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,153:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/angular-sanitize.js HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,168:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/angular-animate.js HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,171:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/ngToast.js HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,174:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/font/roboto/Roboto-Light.woff2 HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,182:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/font/roboto/Roboto-Regular.woff2 HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,186:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,189:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/font/roboto/Roboto-Bold.woff2 HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,191:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/task.js HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,193:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/angular-datepicker.js HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,371:task_db.py:tasks list = []
-INFO:2017-03-30 01:28:20,371:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /task/list HTTP/1.1" 200 -
-INFO:2017-03-30 01:28:20,593:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:2017-03-30 02:53:34,053:loggen.py:Starting Task App Logger at 20170330_025334
+INFO:2017-03-30 02:53:34,053:tasks_indiez.py:Starting tasks app
+INFO:2017-03-30 02:53:34,055:_internal.py: * Running on http://127.0.0.1:5000/
+INFO:2017-03-30 02:53:44,764:_internal.py:127.0.0.1 - - [30/Mar/2017 02:53:44] "GET / HTTP/1.1" 200 -
+INFO:2017-03-30 02:53:47,296:task_db.py:tasks list = [{u'task_end_date': '2017-03-30', u'task_id': 1, u'task_create_date': '2017-03-29', u'task_description': u'first test task created', u'task_owner': u'bkallur', u'task_name': u'test1'}, {u'task_end_date': '2017-03-31', u'task_id': 2, u'task_create_date': '2017-03-29', u'task_description': u'second test task created', u'task_owner': u'bkallur', u'task_name': u'test2'}, {u'task_end_date': '2017-03-31', u'task_id': 3, u'task_create_date': '2017-03-29', u'task_description': u'write an effective backend using python flask', u'task_owner': u'bkallur', u'task_name': u'Write backend'}, {u'task_end_date': '2017-03-31', u'task_id': 4, u'task_create_date': '2017-03-29', u'task_description': u'write an effective frontend using bootstrap, angular and mdb', u'task_owner': u'bkallur', u'task_name': u'write frontend'}, {u'task_end_date': '2017-03-30', u'task_id': 5, u'task_create_date': '2017-03-29', u'task_description': u'third test task', u'task_owner': u'ranjini', u'task_name': u'test3'}]
+INFO:2017-03-30 02:53:47,298:_internal.py:127.0.0.1 - - [30/Mar/2017 02:53:47] "GET /task/list HTTP/1.1" 200 -
+INFO:2017-03-30 02:55:18,008:_internal.py:127.0.0.1 - - [30/Mar/2017 02:55:18] "GET / HTTP/1.1" 200 -
+INFO:2017-03-30 02:55:20,735:task_db.py:tasks list = [{u'task_end_date': '2017-03-30', u'task_id': 1, u'task_create_date': '2017-03-29', u'task_description': u'first test task created', u'task_owner': u'bkallur', u'task_name': u'test1'}, {u'task_end_date': '2017-03-31', u'task_id': 2, u'task_create_date': '2017-03-29', u'task_description': u'second test task created', u'task_owner': u'bkallur', u'task_name': u'test2'}, {u'task_end_date': '2017-03-31', u'task_id': 3, u'task_create_date': '2017-03-29', u'task_description': u'write an effective backend using python flask', u'task_owner': u'bkallur', u'task_name': u'Write backend'}, {u'task_end_date': '2017-03-31', u'task_id': 4, u'task_create_date': '2017-03-29', u'task_description': u'write an effective frontend using bootstrap, angular and mdb', u'task_owner': u'bkallur', u'task_name': u'write frontend'}, {u'task_end_date': '2017-03-30', u'task_id': 5, u'task_create_date': '2017-03-29', u'task_description': u'third test task', u'task_owner': u'ranjini', u'task_name': u'test3'}]
+INFO:2017-03-30 02:55:20,737:_internal.py:127.0.0.1 - - [30/Mar/2017 02:55:20] "GET /task/list HTTP/1.1" 200 -
+INFO:2017-03-30 02:55:21,957:_internal.py:127.0.0.1 - - [30/Mar/2017 02:55:21] "GET /static/js/angular.min.js.map HTTP/1.1" 404 -
+INFO:2017-03-30 02:55:59,164:_internal.py:127.0.0.1 - - [30/Mar/2017 02:55:59] "GET / HTTP/1.1" 200 -
+INFO:2017-03-30 02:56:01,735:task_db.py:tasks list = [{u'task_end_date': '2017-03-30', u'task_id': 1, u'task_create_date': '2017-03-29', u'task_description': u'first test task created', u'task_owner': u'bkallur', u'task_name': u'test1'}, {u'task_end_date': '2017-03-31', u'task_id': 2, u'task_create_date': '2017-03-29', u'task_description': u'second test task created', u'task_owner': u'bkallur', u'task_name': u'test2'}, {u'task_end_date': '2017-03-31', u'task_id': 3, u'task_create_date': '2017-03-29', u'task_description': u'write an effective backend using python flask', u'task_owner': u'bkallur', u'task_name': u'Write backend'}, {u'task_end_date': '2017-03-31', u'task_id': 4, u'task_create_date': '2017-03-29', u'task_description': u'write an effective frontend using bootstrap, angular and mdb', u'task_owner': u'bkallur', u'task_name': u'write frontend'}, {u'task_end_date': '2017-03-30', u'task_id': 5, u'task_create_date': '2017-03-29', u'task_description': u'third test task', u'task_owner': u'ranjini', u'task_name': u'test3'}]
+INFO:2017-03-30 02:56:01,736:_internal.py:127.0.0.1 - - [30/Mar/2017 02:56:01] "GET /task/list HTTP/1.1" 200 -
+INFO:2017-03-30 02:56:01,911:_internal.py:127.0.0.1 - - [30/Mar/2017 02:56:01] "GET /static/js/angular.min.js.map HTTP/1.1" 404 -
