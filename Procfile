@@ -1,1 +1,1 @@
-web: python tasks_indiez.py
+web: gunicorn manage:tasks_indiez
