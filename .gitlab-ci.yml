@@ -4,7 +4,6 @@ tasks_indiez:
         - apt-get install -y python-dev python-pip
         - pip install -r requirements.txt
         - export MONGOHQ_URL=mongodb://heroku_tr2f0kzz:6vgb9kukuk3tg1berdjegh3vn4@ds033175.mlab.com:33175/heroku_tr2f0kzz
-        - python tasks_indiez.py
     
 production:
     type: deploy
