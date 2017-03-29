@@ -1,0 +1,17 @@
+tasks_indiez:
+    script:
+        - export DATABASE_URL=mongodb://mongodb:@mongoprovider.com:27409/rest
+        - apt-get update -qy
+        - apt-get install -y python-dev python-pip
+        - pip install -r requirements.txt
+        - python tasks_indiez.py
+    
+    production:
+        type: deploy
+        script:
+            - apt-get update -qy
+            - apt-get install -y ruby-dev
+            - gem install dpl
+            - dpl --provider=heroku --app=gitlab-ci-python-test-prod --api-key=8f952b95-de55-44bf-bc10-f46a6cfe2216
+        only:
+            - tags
