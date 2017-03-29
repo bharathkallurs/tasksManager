@@ -50,7 +50,7 @@ class TaskTable(Db):
 				log.info("Task = %s", insert_json)
 				return (200, "Task Entered Successfully")
 		except Exception as e:
-			log.error(sys.exc_info()[0], e.message)
+			log.error(str(e))
 			return (-101, "Task entry failed")
 
 	@staticmethod
@@ -77,7 +77,7 @@ class TaskTable(Db):
 				log.info("tasks list = %s", out)
 				return (200, out)
 		except Exception as e:
-			log.error(sys.exc_info()[0], e.message)
+			log.error(str(e))
 			return (-103, "Task list failed")
 
 	@staticmethod
@@ -120,7 +120,7 @@ class TaskTable(Db):
 				log.info("tasks list %s %s = %s", after_str, str_date, out)
 				return (200, out)
 		except Exception as e:
-			log.error(sys.exc_info()[0], e.message)
+			log.error(str(e))
 			return (-103, "Tasks listing failed")
 
 	@staticmethod
@@ -150,7 +150,7 @@ class TaskTable(Db):
 					return (404, "No task with task_id %d" % task_id)
 				return (200, out)
 		except Exception as e:
-			log.error(sys.exc_info()[0], e.message)
+			log.error(str(e))
 			return (-103, "Task listing failed")
 
 	@staticmethod
@@ -195,7 +195,7 @@ class TaskTable(Db):
 				log.error("-102 - Task update failed %s", result)
 				return (-102, "Task update failed.")
 		except Exception as e:
-			log.error(sys.exc_info()[0], e.message)
+			log.error(str(e))
 			return (-103, "Task update failed")
 
 	@staticmethod
@@ -214,8 +214,7 @@ class TaskTable(Db):
 				log.info("Task with id %d deleted", task_id)
 				return (200, "Task with id %d deleted" % task_id)
 		except Exception as e:
-			log.error(sys.exc_info()[0], e.message)
-			print sys.exc_info()[0], e
+			log.error(str(e))
 			return (-104, "Task deleteion failed")
 
 
