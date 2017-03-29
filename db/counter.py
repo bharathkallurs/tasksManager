@@ -12,9 +12,8 @@ class counter(Db):
 	@staticmethod
 	def get_next_counter(name, retry=0):
 		with counter() as table:
-			c = table.find_and_modify( query={ "_id" : name },
-			                           update={ "$inc" : { "count" : 1 } },
-			                           new=True, upsert=True)
+			c = table.find_one_and_update({"_id": name}, {"$inc": {"count": 1}},
+			                              upsert=True, new=True)
 		if c is not None:
 			return c['count']
 		if retry < 3:

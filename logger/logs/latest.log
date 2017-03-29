@@ -1,28 +1,35 @@
-INFO:2017-03-29 20:59:05,410:loggen.py:Starting Task App Logger at 20170329_205905
-INFO:2017-03-29 20:59:05,410:tasks_indiez.py:Starting tasks app
-INFO:2017-03-29 20:59:05,415:_internal.py: * Running on http://0.0.0.0:5002/
-INFO:2017-03-29 20:59:24,994:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:24] "GET / HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:25,396:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:25] "GET /static/css/bootstrap.css HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:25,713:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:25] "GET /static/css/ngtoast-animations.scss HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:25,829:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:25] "GET /static/css/ngToast.scss HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:25,838:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:25] "GET /static/css/mdb.css HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:25,845:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:25] "GET /static/css/angular-datepicker.css HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:25,849:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:25] "GET /static/css/font-awesome.min.css HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:25,859:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:25] "GET /static/css/custom.css HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:25,876:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:25] "GET /static/js/jquery.js HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:26,093:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /static/js/bootstrap.js HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:26,112:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /static/js/angular.js HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:26,136:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /static/js/mdb.js HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:26,140:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /static/js/angular-sanitize.js HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:26,146:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /static/js/angular-animate.js HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:26,160:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /static/font/roboto/Roboto-Regular.woff2 HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:26,362:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /static/font/roboto/Roboto-Light.woff2 HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:26,364:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:26,366:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /static/font/roboto/Roboto-Bold.woff2 HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:26,368:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /static/js/ngToast.js HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:26,379:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /static/js/task.js HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:26,393:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /static/js/angular-datepicker.js HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:26,625:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /favicon.ico HTTP/1.1" 404 -
-INFO:2017-03-29 20:59:26,794:task_db.py:tasks list = [{u'task_end_date': '2017-04-24', u'task_id': 6, u'task_create_date': '2017-03-19', u'task_description': u'updated by hanuman', u'task_owner': u'hanuman', u'task_name': u'just another name'}, {u'task_end_date': '2017-04-08', u'task_id': 8, u'task_create_date': '2017-03-20', u'task_description': u'Ranjini Gunjini', u'task_owner': u'ranjini', u'task_name': u'R1_updated'}, {u'task_end_date': '2017-04-18', u'task_id': 9, u'task_create_date': '2017-03-26', u'task_description': u'mardhini', u'task_owner': u'kariyamma', u'task_name': u'mahisha'}, {u'task_end_date': '2017-04-30', u'task_id': 10, u'task_create_date': '2017-03-26', u'task_description': u'anjaneya', u'task_owner': u'SriRama', u'task_name': u'hanuman'}, {u'task_end_date': '2017-03-30', u'task_id': 11, u'task_create_date': '2017-03-26', u'task_description': u'kariyammana krupe', u'task_owner': u'kariyamma', u'task_name': u'mahataayi'}, {u'task_end_date': '2017-03-30', u'task_id': 12, u'task_create_date': '2017-03-26', u'task_description': u'hattuvudu', u'task_owner': u'lakshmi ranganatha', u'task_name': u'betta'}, {u'task_end_date': '2017-03-29', u'task_id': 13, u'task_create_date': '2017-03-26', u'task_description': u'chamaka', u'task_owner': u'rudradeva', u'task_name': u'rudra'}, {u'task_end_date': '2020-02-02', u'task_id': 14, u'task_create_date': '2017-03-26', u'task_description': u'to recite jai sri ram always', u'task_owner': u'Hanuman', u'task_name': u'Jai Sri Ram'}, {u'task_end_date': '2020-04-06', u'task_id': 15, u'task_create_date': '2017-03-26', u'task_description': u'to recite rama nama', u'task_owner': u'bkallur', u'task_name': u'Ram naama'}, {u'task_end_date': '2017-06-21', u'task_id': 16, u'task_create_date': '2017-03-26', u'task_description': u'to recite vittala nama', u'task_owner': u'bkallur', u'task_name': u'vittala nama'}, {u'task_end_date': '2017-06-21', u'task_id': 17, u'task_create_date': '2017-03-27', u'task_description': u'Listen to all good music by all good artists', u'task_owner': u'Ranjini', u'task_name': u'Listen to Music'}, {u'task_end_date': '2017-05-30', u'task_id': 19, u'task_create_date': '2017-03-27', u'task_description': u"Ranjni's 3rd task", u'task_owner': u'Ranjini', u'task_name': u'R3'}, {u'task_end_date': '2017-09-30', u'task_id': 21, u'task_create_date': '2017-03-27', u'task_description': u'new task created just now', u'task_owner': u'KVS', u'task_name': u'New task'}, {u'task_end_date': '2017-03-31', u'task_id': 23, u'task_create_date': '2017-03-28', u'task_description': u'lansdasndl', u'task_owner': u'bkallur', u'task_name': u'random task'}, {u'task_end_date': '2017-03-31', u'task_id': 24, u'task_create_date': '2017-03-28', u'task_description': u'lkansdlaknsdlalnsdlkansdlnsd', u'task_owner': u'hanuman', u'task_name': u'lkansdkans'}, {u'task_end_date': '2017-03-30', u'task_id': 25, u'task_create_date': '2017-03-28', u'task_description': u'oweiuoweiuowuoweuwoeuqoweuqoweuoqweuoqweuoqwueoqwueoqwue', u'task_owner': u'hanuamn', u'task_name': u'uoauowooweoeoqiwoqkwoq'}, {u'task_end_date': '2017-03-30', u'task_id': 26, u'task_create_date': '2017-03-28', u'task_description': u'devara bhakti vyaktapadisuvike', u'task_owner': u'bkallur', u'task_name': u'bhakti'}, {u'task_end_date': '2017-03-29', u'task_id': 27, u'task_create_date': '2017-03-28', u'task_description': u'paayasake', u'task_owner': u'vittala', u'task_name': u'ramanaama'}, {u'task_end_date': '2017-03-30', u'task_id': 28, u'task_create_date': '2017-03-29', u'task_description': u'velli velli', u'task_owner': u'natchattiram', u'task_name': u'vnnilave'}, {u'task_end_date': '2017-03-30', u'task_id': 29, u'task_create_date': '2017-03-29', u'task_description': u'QWQWQWQW', u'task_owner': u'asasasas', u'task_name': u'xZxZXZX'}, {u'task_end_date': '2017-03-30', u'task_id': 30, u'task_create_date': '2017-03-29', u'task_description': u'dssaasdasdasdsad', u'task_owner': u'kariyamma', u'task_name': u'asdasdasdasd'}, {u'task_end_date': '2017-03-29', u'task_id': 31, u'task_create_date': '2017-03-29', u'task_description': u'aashirvaada maaDuvudu', u'task_owner': u'kariyamma', u'task_name': u'aashirvaada'}, {u'task_end_date': '2017-03-30', u'task_id': 32, u'task_create_date': '2017-03-29', u'task_description': u'asuuah', u'task_owner': u'oasdhau', u'task_name': u'uahsdoaushdu'}, {u'task_end_date': '2017-03-31', u'task_id': 33, u'task_create_date': '2017-03-29', u'task_description': u'klansdaldsnaldsi', u'task_owner': u'aksdalds', u'task_name': u'ajnkasnd'}, {u'task_end_date': '2017-03-31', u'task_id': 34, u'task_create_date': '2017-03-29', u'task_description': u'asdasd', u'task_owner': u'asdasd23adasd', u'task_name': u'asdads'}]
-INFO:2017-03-29 20:59:26,796:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:26] "GET /task/list HTTP/1.1" 200 -
-INFO:2017-03-29 20:59:27,655:_internal.py:127.0.0.1 - - [29/Mar/2017 20:59:27] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:2017-03-29 23:46:44,204:loggen.py:Starting Task App Logger at 20170329_234644
+INFO:2017-03-29 23:46:44,204:tasks_indiez.py:Starting tasks app
+INFO:2017-03-29 23:46:44,206:_internal.py: * Running on http://0.0.0.0:5002/
+INFO:2017-03-29 23:47:03,989:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:03] "GET / HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,029:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/bootstrap.css HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,040:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,045:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/angular-datepicker.css HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,055:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/mdb.css HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,062:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/ngToast.scss HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,065:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/ngtoast-animations.scss HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,076:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/custom.css HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,093:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/jquery.js HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,110:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/bootstrap.js HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,179:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/angular.js HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,302:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/mdb.js HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,349:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/angular-sanitize.js HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,354:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/angular-animate.js HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,358:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/font/roboto/Roboto-Light.woff2 HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,368:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/font/roboto/Roboto-Regular.woff2 HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,371:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,374:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/font/roboto/Roboto-Bold.woff2 HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,376:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/ngToast.js HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,378:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/task.js HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:04,380:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/angular-datepicker.js HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:07,002:task_db.py:tasks list = []
+INFO:2017-03-29 23:47:07,004:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:07] "GET /task/list HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:07,032:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:07] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:2017-03-29 23:47:11,562:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:11] "GET /static/js/angular.min.js.map HTTP/1.1" 404 -
+INFO:2017-03-29 23:47:11,645:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:11] "GET /static/css/bootstrap.css.map HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:36,540:task_db.py:Setting task_id = 1
+INFO:2017-03-29 23:47:38,292:task_db.py:Inserted task successfully to DB
+INFO:2017-03-29 23:47:38,292:task_db.py:Task = {'task_end_date': datetime.datetime(2017, 3, 30, 23, 59, 59), 'task_id': 1, 'task_create_date': datetime.datetime(2017, 3, 29, 23, 47, 36, 540206), 'task_description': 'new task to connect to db', 'task_owner': 'bkallur', 'task_name': 'test task', '_id': ObjectId('58dbfa428f55ad7fd7a0219e')}
+INFO:2017-03-29 23:47:38,294:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:38] "POST /task/add HTTP/1.1" 200 -
+INFO:2017-03-29 23:47:40,297:task_db.py:tasks list = [{u'task_end_date': '2017-03-30', u'task_id': 1, u'task_create_date': '2017-03-29', u'task_description': u'new task to connect to db', u'task_owner': u'bkallur', u'task_name': u'test task'}]
+INFO:2017-03-29 23:47:40,299:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:40] "GET /task/list HTTP/1.1" 200 -

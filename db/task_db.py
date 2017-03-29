@@ -7,7 +7,8 @@ from datetime import datetime
 from db import Db
 
 
-TABLE_NAME = "task_db"
+# Setting TABLE_NAME to assigned table name in the mongodb instance of heroku
+TABLE_NAME = "heroku_tr2f0kzz"
 
 class TaskTable(Db):
 	"""
@@ -30,6 +31,7 @@ class TaskTable(Db):
 		:param task_owner: owner of the task
 		:return: Success if task entered, else appropriate error
 		"""
+		log.info("Table Name chosen is = ", TABLE_NAME)
 		task_id = counter.get_next_counter(TABLE_NAME)
 		current_date = datetime.now()
 		log.info("Setting task_id = %s", task_id)
@@ -48,7 +50,7 @@ class TaskTable(Db):
 				log.info("Task = %s", insert_json)
 				return (200, "Task Entered Successfully")
 		except Exception as e:
-			log.error(sys.exc_info()[0], e)
+			log.error(sys.exc_info()[0], e.message)
 			return (-101, "Task entry failed")
 
 	@staticmethod
@@ -75,7 +77,7 @@ class TaskTable(Db):
 				log.info("tasks list = %s", out)
 				return (200, out)
 		except Exception as e:
-			log.error(sys.exc_info()[0], e)
+			log.error(sys.exc_info()[0], e.message)
 			return (-103, "Task list failed")
 
 	@staticmethod
@@ -118,7 +120,7 @@ class TaskTable(Db):
 				log.info("tasks list %s %s = %s", after_str, str_date, out)
 				return (200, out)
 		except Exception as e:
-			log.error(sys.exc_info()[0], e)
+			log.error(sys.exc_info()[0], e.message)
 			return (-103, "Tasks listing failed")
 
 	@staticmethod
@@ -148,7 +150,7 @@ class TaskTable(Db):
 					return (404, "No task with task_id %d" % task_id)
 				return (200, out)
 		except Exception as e:
-			log.error(sys.exc_info()[0], e)
+			log.error(sys.exc_info()[0], e.message)
 			return (-103, "Task listing failed")
 
 	@staticmethod
@@ -193,7 +195,7 @@ class TaskTable(Db):
 				log.error("-102 - Task update failed %s", result)
 				return (-102, "Task update failed.")
 		except Exception as e:
-			log.error(sys.exc_info()[0], e)
+			log.error(sys.exc_info()[0], e.message)
 			return (-103, "Task update failed")
 
 	@staticmethod
@@ -212,7 +214,7 @@ class TaskTable(Db):
 				log.info("Task with id %d deleted", task_id)
 				return (200, "Task with id %d deleted" % task_id)
 		except Exception as e:
-			log.error(sys.exc_info()[0], e)
+			log.error(sys.exc_info()[0], e.message)
 			print sys.exc_info()[0], e
 			return (-104, "Task deleteion failed")
 
