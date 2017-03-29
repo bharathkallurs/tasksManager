@@ -10,22 +10,23 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form data-toggle="validator" role="form">
             <div class="form-group">
                 <label for="taskname">Task Name</label>
-                <input type="text" class="form-control"
+                <input type="text" class="form-control" maxlength="15"
+                       pattern="^[ _A-z0-9]{1,}$"
                        placeholder="Task Name" ng-model="task.task_name" required>
             </div>
             <div class="form-group">
                 <label for="taskdesc">Task Description</label>
-                <input type="text" class="form-control"
+                <input type="text" class="form-control" maxlength="200"
                        placeholder="Description"
                        ng-model="task.task_description" required>
             </div>
             <div class="form-group">
                 <label for="taskowner">Created By</label>
                 <input type="text" class="form-control" placeholder="Task Owner"
-                ng-model="task.task_owner" required>
+                ng-model="task.task_owner" maxlength="15" required>
             </div>
             <div class="form-group">
                 <label for="taskenddate">Task End Date</label>
@@ -63,18 +64,18 @@
             <div class="form-group">
                 <label for="taskname">Task Name</label>
                 <input type="text" class="form-control"
-                       ng-model="task_detail.task_name">
+                       ng-model="task_detail.task_name" maxlength="15">
             </div>
             <div class="form-group">
                 <label for="taskdesc">Task Description</label>
                 <input type="text" class="form-control"
                        ng-model="task_detail
-                       .task_description">
+                       .task_description" maxlength="200">
             </div>
             <div class="form-group">
                 <label for="taskowner">Created By</label>
                 <input type="text" class="form-control"
-                ng-model="task_detail.task_owner">
+                ng-model="task_detail.task_owner" maxlength="15">
             </div>
             <div class="form-group">
                 <label for="taskenddate">Task End Date</label>
