@@ -2,7 +2,7 @@ tasks_indiez:
     script:
         - apt-get update -qy
         - apt-get install -y python-dev python-pip
-        - export MONGOHQ_URL=mongodb:admin:admin//@server.mongohq.com/task_db
+        - export MONGOHQ_URL=mongodb://admin:@server.mongohq.com/task_db
         - pip install -r requirements.txt
         - python tasks_indiez.py
     
