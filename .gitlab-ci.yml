@@ -6,12 +6,12 @@ tasks_indiez:
         - pip install -r requirements.txt
         - python tasks_indiez.py
     
-    production:
-        type: deploy
-        script:
-            - apt-get update -qy
-            - apt-get install -y ruby-dev
-            - gem install dpl
-            - dpl --provider=heroku --app=task-mgmt-app --api-key=8f952b95-de55-44bf-bc10-f46a6cfe2216
-        only:
-            - master
+production:
+    type: deploy
+    script:
+        - apt-get update -qy
+        - apt-get install -y ruby-dev
+        - gem install dpl
+        - dpl --provider=heroku --app=task-mgmt-app --api-key=8f952b95-de55-44bf-bc10-f46a6cfe2216
+    only:
+        - master
