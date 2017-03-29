@@ -1,35 +1,27 @@
-INFO:2017-03-29 23:46:44,204:loggen.py:Starting Task App Logger at 20170329_234644
-INFO:2017-03-29 23:46:44,204:tasks_indiez.py:Starting tasks app
-INFO:2017-03-29 23:46:44,206:_internal.py: * Running on http://0.0.0.0:5002/
-INFO:2017-03-29 23:47:03,989:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:03] "GET / HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,029:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/bootstrap.css HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,040:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/font-awesome.min.css HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,045:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/angular-datepicker.css HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,055:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/mdb.css HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,062:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/ngToast.scss HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,065:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/ngtoast-animations.scss HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,076:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/css/custom.css HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,093:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/jquery.js HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,110:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/bootstrap.js HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,179:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/angular.js HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,302:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/mdb.js HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,349:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/angular-sanitize.js HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,354:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/angular-animate.js HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,358:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/font/roboto/Roboto-Light.woff2 HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,368:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/font/roboto/Roboto-Regular.woff2 HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,371:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,374:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/font/roboto/Roboto-Bold.woff2 HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,376:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/ngToast.js HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,378:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/task.js HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:04,380:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:04] "GET /static/js/angular-datepicker.js HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:07,002:task_db.py:tasks list = []
-INFO:2017-03-29 23:47:07,004:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:07] "GET /task/list HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:07,032:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:07] "GET /favicon.ico HTTP/1.1" 404 -
-INFO:2017-03-29 23:47:11,562:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:11] "GET /static/js/angular.min.js.map HTTP/1.1" 404 -
-INFO:2017-03-29 23:47:11,645:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:11] "GET /static/css/bootstrap.css.map HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:36,540:task_db.py:Setting task_id = 1
-INFO:2017-03-29 23:47:38,292:task_db.py:Inserted task successfully to DB
-INFO:2017-03-29 23:47:38,292:task_db.py:Task = {'task_end_date': datetime.datetime(2017, 3, 30, 23, 59, 59), 'task_id': 1, 'task_create_date': datetime.datetime(2017, 3, 29, 23, 47, 36, 540206), 'task_description': 'new task to connect to db', 'task_owner': 'bkallur', 'task_name': 'test task', '_id': ObjectId('58dbfa428f55ad7fd7a0219e')}
-INFO:2017-03-29 23:47:38,294:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:38] "POST /task/add HTTP/1.1" 200 -
-INFO:2017-03-29 23:47:40,297:task_db.py:tasks list = [{u'task_end_date': '2017-03-30', u'task_id': 1, u'task_create_date': '2017-03-29', u'task_description': u'new task to connect to db', u'task_owner': u'bkallur', u'task_name': u'test task'}]
-INFO:2017-03-29 23:47:40,299:_internal.py:127.0.0.1 - - [29/Mar/2017 23:47:40] "GET /task/list HTTP/1.1" 200 -
+INFO:2017-03-30 01:27:49,243:loggen.py:Starting Task App Logger at 20170330_012749
+INFO:2017-03-30 01:27:49,243:tasks_indiez.py:Starting tasks app
+INFO:2017-03-30 01:27:49,284:_internal.py: * Running on http://127.0.0.1:5000/
+INFO:2017-03-30 01:28:19,981:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:19] "GET / HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,005:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/bootstrap.css HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,062:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,065:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/angular-datepicker.css HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,066:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/mdb.css HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,070:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/ngToast.scss HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,072:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/ngtoast-animations.scss HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,074:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/css/custom.css HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,090:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/jquery.js HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,107:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/bootstrap.js HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,130:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/angular.js HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,150:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/mdb.js HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,153:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/angular-sanitize.js HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,168:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/angular-animate.js HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,171:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/ngToast.js HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,174:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/font/roboto/Roboto-Light.woff2 HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,182:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/font/roboto/Roboto-Regular.woff2 HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,186:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,189:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/font/roboto/Roboto-Bold.woff2 HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,191:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/task.js HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,193:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /static/js/angular-datepicker.js HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,371:task_db.py:tasks list = []
+INFO:2017-03-30 01:28:20,371:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /task/list HTTP/1.1" 200 -
+INFO:2017-03-30 01:28:20,593:_internal.py:127.0.0.1 - - [30/Mar/2017 01:28:20] "GET /favicon.ico HTTP/1.1" 404 -

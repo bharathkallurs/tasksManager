@@ -156,6 +156,6 @@ if __name__ == '__main__':
     # To change enter level = # log.DEBUG or log.WARNING etc.
     set_log_params(level=log.INFO)
     log.info("Starting tasks app")
-    app.run(host="0.0.0.0", port=5002)
+    app.run()
     # move latest.log to tasker_<timebased>.log
     move_latest_log_to_persistent_file()
