@@ -14,4 +14,4 @@ tasks_indiez:
             - gem install dpl
             - dpl --provider=heroku --app=task-mgmt-app --api-key=8f952b95-de55-44bf-bc10-f46a6cfe2216
         only:
-            - tags
+            - master
