@@ -71,7 +71,7 @@ tasker.controller("taskController", function($scope, $http, ngToast){
             $scope.tasks = response.data.result;
             console.log('list', $scope.tasks);
             $("#listRange").modal('hide');
-            ngToastmsg(ngToast, 'info', response.data.result);
+            //ngToastmsg(ngToast, 'info', response.data.result);
         }, function(error) {
             ngToastmsg(ngToast, 'danger', error.data);
             console.log(error);
