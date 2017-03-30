@@ -28,7 +28,7 @@
 <!-- Card display -->
 <div class="container">
     <br><br>
-        <div class="card-columns">
+        <div class="card-columns" ng-if="tasks.indexOf('No task') !=0">
             <div class="card hoverable" ng-repeat="task in tasks">
                 <div class="card-block">
                     <h4 id="#tName" class="card-title">{a task.task_name a}</h4>
@@ -69,6 +69,12 @@
                        onmouseover="" style="cursor: pointer;"></i>
                 </div>
             </div>
+        </div>
+        <div class="header" ng-if="tasks.indexOf('No task') == 0">
+            <!-- tasks has the message here -->
+            <h3 class="text-center">{a tasks a}</h3>
+            <h2 class="text-center">Click <i class="fa fa-bars"></i> to
+                reload all tasks</h2>
         </div>
 </div>
 {% include 'modals.html' %}

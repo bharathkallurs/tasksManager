@@ -101,6 +101,7 @@ def task_list_between_create_date(st_date, en_date):
     if not filter_st_date:
         return get_response_json(403, "start date not in YYYY-MM-DD format")
     filter_st_date = filter_st_date.replace(hour=00, minute=01, second=01)
+
     filter_en_date, msg = validate_date(en_date)
     if not filter_en_date:
         return get_response_json(403, "end date not in YYYY-MM-DD format")

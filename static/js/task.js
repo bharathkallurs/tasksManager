@@ -8,6 +8,8 @@ tasker.config(['$interpolateProvider', function($interpolateProvider) {
 tasker.controller("taskController", function($scope, $http, ngToast){
     $scope.task = {};
     $scope.task_detail = {};
+    var start_date;
+    var end_date;
 
     // set today's date to minimum limit
     $scope.minDate = new Date().toString();
@@ -42,23 +44,23 @@ tasker.controller("taskController", function($scope, $http, ngToast){
                         ngToastmsg(ngToast, 'danger', error.data);
                         console.log(error.data);
                     });
-                };
+    };
 
     $scope.listTasks = function() {
         $http({
             method: 'GET',
             url: '/task/list'
         }).then(function(response) {
-                        $scope.tasks = response.data.result;
-                    }, function(error) {
-                        ngToastmsg(ngToast, 'danger', error.data);
-                        console.log(error);
-                    });
-                };
+                    $scope.tasks = response.data.result;
+                }, function(error) {
+                    ngToastmsg(ngToast, 'danger', error.data);
+                    console.log(error);
+        });
+    };
 
     $scope.listTaskDateRange = function() {
-        var start_date = $("#listStDt").val();
-        var end_date = $("#listEnDt").val();
+        start_date = $("#listStDt").val();
+        end_date = $("#listEnDt").val();
         console.log('start date', start_date);
         console.log('end date', end_date);
 
@@ -67,6 +69,7 @@ tasker.controller("taskController", function($scope, $http, ngToast){
             url: '/task/list_bw_cr_dt/'.concat(start_date, '/', end_date)
         }).then(function(response) {
             $scope.tasks = response.data.result;
+            console.log('list', $scope.tasks);
             $("#listRange").modal('hide');
             ngToastmsg(ngToast, 'info', response.data.result);
         }, function(error) {
@@ -87,46 +90,46 @@ tasker.controller("taskController", function($scope, $http, ngToast){
                     }, function(error) {
                         ngToastmsg(ngToast, 'danger', error.data);
                         console.log(error);
-                    });
-                };
+        });
+    };
 
     $scope.updateTask = function(){
-                    console.log("before");
-                    console.log($scope.task_detail);
-					var updateCall = $http({
-						method: 'PUT',
-						url: '/task/update/'.concat($scope.task_detail['task_id']),
-						data: {task : $scope.task_detail}
-					});
+        console.log("before");
+        console.log($scope.task_detail);
+        var updateCall = $http({
+                method: 'PUT',
+                url: '/task/update/'.concat($scope.task_detail['task_id']),
+                data: {task : $scope.task_detail}
+            });
 
-					$('#updateTask').modal('hide');
+            $('#updateTask').modal('hide');
 
-                    updateCall.then(function(response) {
-						console.log(response.data);
-						$scope.listTasks();
-						ngToastmsg(ngToast, 'success', response.data.result);
-					}, function(error) {
-                        ngToastmsg(ngToast, 'danger', error.data);
-						console.log(error);
-					});
-				};
+            updateCall.then(function(response) {
+                console.log(response.data);
+                $scope.listTasks();
+                ngToastmsg(ngToast, 'success', response.data.result);
+            }, function(error) {
+                ngToastmsg(ngToast, 'danger', error.data);
+                console.log(error);
+            });
+    };
 
     $scope.deleteTask = function(){
-                    var deleteCall = $http({
-                        method: 'GET',
-                        url: '/task/delete/'.concat($scope.task_detail['task_id']),
-                    });
+        var deleteCall = $http({
+            method: 'GET',
+            url: '/task/delete/'.concat($scope.task_detail['task_id']),
+        });
 
-                    $("#deleteTask").modal('hide');
+        $("#deleteTask").modal('hide');
 
-                    deleteCall.then(function(response){
-                        $scope.listTasks();
-                        ngToastmsg(ngToast, 'success', response.data.result);
-                    }, function(error){
-                        ngToastmsg(ngToast, 'danger', error.data);
-                        console.log(error);
-                    });
-                };
+        deleteCall.then(function(response){
+            $scope.listTasks();
+            ngToastmsg(ngToast, 'success', response.data.result);
+        }, function(error){
+            ngToastmsg(ngToast, 'danger', error.data);
+            console.log(error);
+        });
+    };
 
     // Call this on page load to list all the tasks
     $scope.listTasks();

@@ -93,21 +93,26 @@ class TaskTable(Db):
 		str_date = qdate.strftime("%Y-%m-%d")
 		after_str = "created after"
 		out = []
+		output_msg = None
 		try:
 			with TaskTable() as table:
 				table.ensure_index([("task_id", ASCENDING)], unique=True)
 				if after:
 					date_query = {"task_create_date": {"$gt": qdate}}
 					if pdate:
+						cl_date = pdate.strftime("%Y-%m-%d")
 						date_query = {"task_create_date": {"$gt": qdate,
 														   "$lt": pdate}}
-						after_str = "ending before %s and started after" % qdate
+						after_str = "started after %s and ending before %s" % \
+						            (str_date, cl_date)
+						output_msg = "No task " + after_str
 				else:
 					date_query = {"task_end_date": {"$lt": qdate}}
 					after_str = "ending before"
 				results = table.find(date_query, {"_id": False})
 				if not results:
-					log.warning("No tasks to list %s this date", after_str)
+					output_msg = "No tasks to list %s this date" % after_str
+					log.warning(output_msg)
 					return (-102, None)
 				for r in results:
 					cr_date = r['task_create_date']
@@ -116,8 +121,7 @@ class TaskTable(Db):
 					r['task_end_date'] = en_date.strftime("%Y-%m-%d")
 					out.append(r)
 				if out == []:
-					return (404, "No task %s date %s" % (after_str,
-					                                        str_date))
+					return (404, output_msg)
 				log.info("tasks list %s %s = %s", after_str, str_date, out)
 				return (200, out)
 		except Exception as e:
