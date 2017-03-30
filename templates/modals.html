@@ -79,9 +79,9 @@
             </div>
             <div class="form-group">
                 <label for="taskenddate">Task End Date</label>
-                <datepicker date-format="yyyy-MM-dd">
+                <datepicker date-format="yyyy-MM-dd" date-min-limit="{a
+                task_detail.task_create_date a}">
                     <input type="text" class="form-control"
-                           date-min-limit="{a minDate a}"
                            placeholder="YYYY-MM-DD"
                            ng-model="task_detail.task_end_date">
                 </datepicker>

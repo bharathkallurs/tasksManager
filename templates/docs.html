@@ -83,9 +83,37 @@
               <div class="card-block">
                   API implementation is REST based. Following are allowed:
                   <ul>
-                     <li>Add task : /task/add</li>
+                     <li>Add task : /task/add
+                         <pre>
+                             <code>
+                                 {
+                                  "task": {
+                                    "task_name": "string",
+                                    "task_description": "string",
+                                    "task_owner": "string",
+                                    "task_end_date": "YYYY-MM-DD"
+                                  }
+                                }
+                             </code>
+                         </pre>
+                     </li>
                       <li>Delete task: /task/delete/{task-id}</li>
-                      <li>Update task: /task/update/{task-id}</li>
+                      <li>Update task: /task/update/{task-id}
+                          <pre>
+                              <code>
+                                  {
+                                  "task": {
+                                    "task_create_date": "string",
+                                    "task_description": "string",
+                                    "task_end_date": "YYYY-MM-DD",
+                                    "task_id": {task-id},
+                                    "task_name": "string",
+                                    "task_owner": "string"
+                                  }
+                                }
+                              </code>
+                          </pre>
+                      </li>
                       <li>Get task: /task/get/{task-id}</li>
                       <li>List all tasks: /task/list</li>
                       <li>list all tasks before given date:
@@ -120,6 +148,72 @@
                       <li>Task List all</li>
                       <li>Task list created within a date range</li>
                   </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+            <div class="card-header" role="tab" id="q6">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#a6"
+                   aria-expanded="true" aria-controls="a6">
+                    What are the frontend libraries used for this app?
+                </a>
+              </h5>
+            </div>
+
+            <div id="a6" class="collapse" role="tabpanel"
+                 aria-labelledby="q6">
+              <div class="card-block">
+                  <ul>
+                      <li>Twitter Bootstrap</li>
+                      <li>Angular.js 1.2</li>
+                      <li>Angular-sanitize.js</li>
+                      <li>Angular-animate.js</li>
+                      <li>Angular-datepicker</li>
+                      <li>ngToast for notifications</li>
+                      <li>Material Design for Bootstrap (MDB)</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+            <div class="card-header" role="tab" id="q7">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#a7"
+                   aria-expanded="true" aria-controls="a7">
+                    What is the database used for this application?
+                </a>
+              </h5>
+            </div>
+
+            <div id="a7" class="collapse" role="tabpanel"
+                 aria-labelledby="q7">
+              <div class="card-block">
+                  <p>The app uses MongoDB instance hosted on heroku</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+            <div class="card-header" role="tab" id="q8">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#a8"
+                   aria-expanded="true" aria-controls="a8">
+                    Where is the app hosted?
+                </a>
+              </h5>
+            </div>
+
+            <div id="a8" class="collapse" role="tabpanel"
+                 aria-labelledby="q8">
+              <div class="card-block">
+                  <p>TMA is hosted on a PaaS platform called
+                      <strong>heroku</strong></p>
               </div>
             </div>
           </div>
