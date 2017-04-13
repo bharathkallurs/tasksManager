@@ -3,7 +3,7 @@ tasks_indiez:
         - apt-get update -qy
         - apt-get install -y python-dev python-pip
         - pip install -r requirements.txt
-        - export MONGOHQ_URL=mongodb://heroku_tr2f0kzz:6vgb9kukuk3tg1berdjegh3vn4@ds033175.mlab.com:33175/heroku_tr2f0kzz
+        - export MONGOHQ_URL=MONGO_URL
     
 production:
     type: deploy
@@ -11,6 +11,6 @@ production:
         - apt-get update -qy
         - apt-get install -y ruby-dev
         - gem install dpl
-        - dpl --provider=heroku --app=task-mgmt-app --api-key=8f952b95-de55-44bf-bc10-f46a6cfe2216
+        - dpl --provider=heroku --app=task-mgmt-app --api-key=HEROKU_SECRET_KEY
     only:
         - master
