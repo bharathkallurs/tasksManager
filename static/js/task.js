@@ -47,6 +47,7 @@ tasker.controller("taskController", function($scope, $http, ngToast){
     };
 
     $scope.listTasks = function() {
+        $scope.tasks = {};
         $http({
             method: 'GET',
             url: '/task/list'
